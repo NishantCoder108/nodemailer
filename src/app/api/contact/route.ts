@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 587,
-        secure: false, // true for 465, false for other ports
+        secure: true, // true for 465, false for other ports
         auth: {
             user: sendingEmail,
             pass: password,
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
     try {
         const mail = await transporter.sendMail({
-            from: sendingEmail,
+            from: `Portfolio 🚀<${sendingEmail}>`,
             to: myEmail,
 
             subject: subject,
