@@ -54,27 +54,20 @@ Founder, [Your Company]
 `;
 
   const isDevelopment = process.env.NODE_ENV === "development";
-  if (isDevelopment) {
+  if (!isDevelopment) {
     console.log = () => {};
     console.error = () => {};
   }
   return (
     <>
-      <div className="navbar bg-base-100">
-        <Link className="btn btn-ghost text-xl" href="/">
-          Home
-        </Link>
-        <Link className="btn btn-ghost text-xl" href="/contact">
-          Contact
-        </Link>
-      </div>
-      <main className=" flex items-center justify-center flex-col">
-        <form onSubmit={handleSubmit} className="w-[30vw]">
-          {/*  */}
-
+      <main className="flex items-center justify-center flex-col min-h-screen p-4 sm:p-6 lg:p-8">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-w-md sm:max-w-lg lg:max-w-2xl xl:max-w-3xl"
+        >
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text font-semibold">
+              <span className="label-text font-semibold text-sm sm:text-base">
                 May I know your good name?
               </span>
             </div>
@@ -83,12 +76,12 @@ Founder, [Your Company]
               placeholder="Steve Jobs"
               name="name"
               required
-              className="input input-bordered w-full max-w-md text-sm"
+              className="input input-bordered w-full text-sm sm:text-base"
             />
           </label>
-          <label className="form-control w-full max-w-md">
+          <label className="form-control w-full">
             <div className="label">
-              <span className="label-text font-semibold">
+              <span className="label-text font-semibold text-sm sm:text-base">
                 Can I get your email?
               </span>
             </div>
@@ -97,12 +90,12 @@ Founder, [Your Company]
               required
               placeholder="steve@apple.com"
               name="email"
-              className="input input-bordered w-full max-w-md"
+              className="input input-bordered w-full text-sm sm:text-base"
             />
           </label>
-          <label className="form-control w-full max-w-md">
+          <label className="form-control w-full">
             <div className="label">
-              <span className="label-text font-semibold">
+              <span className="label-text font-semibold text-sm sm:text-base">
                 Can you briefly describe your message&apos;s subject?
               </span>
             </div>
@@ -111,20 +104,20 @@ Founder, [Your Company]
               required
               placeholder="Opportunity to Collaborate on [Your Company's Mission]"
               name="subject"
-              className="input input-bordered w-full max-w-md text-sm"
+              className="input input-bordered w-full text-sm sm:text-base"
             />
           </label>
 
           <label className="form-control">
             <div className="label">
-              <span className="label-text font-semibold">
+              <span className="label-text font-semibold text-sm sm:text-base">
                 What&apos;s your message for me?
               </span>
             </div>
             <textarea
               name="message"
               required
-              className="textarea textarea-bordered h-96  w-full max-w-md"
+              className="textarea textarea-bordered h-64 sm:h-80 lg:h-96 w-full text-sm sm:text-base"
               placeholder={textAreaPlaceholder}
             ></textarea>
           </label>
@@ -132,12 +125,12 @@ Founder, [Your Company]
           {!isFormSubmit ? (
             <button
               type="submit"
-              className="btn mt-4 w-full btn-primary max-w-md"
+              className="btn mt-4 w-full btn-primary text-sm sm:text-base"
             >
               Send
             </button>
           ) : (
-            <button disabled className="btn mt-4 w-full max-w-md">
+            <button disabled className="btn mt-4 w-full">
               <span className="loading loading-spinner"></span>
             </button>
           )}
