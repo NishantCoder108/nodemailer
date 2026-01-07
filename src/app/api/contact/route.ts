@@ -1,7 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 const nodemailer = require("nodemailer");
 
-// Handles POST requests to /api
 
 export async function POST(request: Request) {
     const sendingEmail = process.env.NEXT_SENDING_EMAIL;
@@ -10,7 +9,7 @@ export async function POST(request: Request) {
 
     console.log("dealing with request");
 
-    console.log({ sendingEmail }, { password }, { myEmail });
+    // console.log({ sendingEmail }, { password }, { myEmail });
     const formData = await request.formData();
     const name = formData.get("name");
     const email = formData.get("email");
@@ -40,12 +39,18 @@ export async function POST(request: Request) {
             `,
         });
 
-        return NextResponse.json({ message: "Success: email was sent" });
+
+        return NextResponse.json({
+            message: "Thanks for reaching out! Your message has been sent. I'll get back to you within 24 hours.",
+        }, {
+            status: 200, statusText: `Thanks for reaching out! Your message has been sent. I'll get back to you within 24 hours.`
+        });
     } catch (error) {
         console.log(error);
         return NextResponse.json({
-            message: "COULD NOT SEND MESSAGE",
-            status: 500,
+            message: "We were unable to send your message at this time. Please try again later.",
+        }, {
+            status: 500, statusText: "Something went wrong. Please try again in a few minutes."
         });
     }
 }

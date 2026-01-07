@@ -28,3 +28,19 @@ body {
     text-wrap: balance;
   }
 } */
+
+.blue-toast {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.blue-toast button {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.Toastify__toast {
+  font-size: 14px;
+}
