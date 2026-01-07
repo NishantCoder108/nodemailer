@@ -67,7 +67,7 @@ Founder, [Your Company]
         >
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text font-semibold text-sm sm:text-base">
+              <span className="label-text font-semibold text-xs sm:text-sm">
                 May I know your good name?
               </span>
             </div>
@@ -76,12 +76,12 @@ Founder, [Your Company]
               placeholder="Steve Jobs"
               name="name"
               required
-              className="input input-bordered w-full text-sm sm:text-base"
+              className="input input-bordered w-full text-xs sm:text-sm"
             />
           </label>
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text font-semibold text-sm sm:text-base">
+              <span className="label-text font-semibold text-xs sm:text-sm">
                 Can I get your email?
               </span>
             </div>
@@ -90,12 +90,12 @@ Founder, [Your Company]
               required
               placeholder="steve@apple.com"
               name="email"
-              className="input input-bordered w-full text-sm sm:text-base"
+              className="input input-bordered w-full text-xs sm:text-sm"
             />
           </label>
           <label className="form-control w-full">
             <div className="label">
-              <span className="label-text font-semibold text-sm sm:text-base">
+              <span className="label-text font-semibold text-xs sm:text-sm">
                 Can you briefly describe your message&apos;s subject?
               </span>
             </div>
@@ -104,20 +104,20 @@ Founder, [Your Company]
               required
               placeholder="Opportunity to Collaborate on [Your Company's Mission]"
               name="subject"
-              className="input input-bordered w-full text-sm sm:text-base"
+              className="input input-bordered w-full text-xs sm:text-sm"
             />
           </label>
 
           <label className="form-control">
             <div className="label">
-              <span className="label-text font-semibold text-sm sm:text-base">
+              <span className="label-text font-semibold text-xs sm:text-sm">
                 What&apos;s your message for me?
               </span>
             </div>
             <textarea
               name="message"
               required
-              className="textarea textarea-bordered h-64 sm:h-80 lg:h-96 w-full text-sm sm:text-base"
+              className="textarea textarea-bordered h-64 sm:h-80 lg:h-96 w-full text-xs sm:text-sm"
               placeholder={textAreaPlaceholder}
             ></textarea>
           </label>
@@ -125,7 +125,7 @@ Founder, [Your Company]
           {!isFormSubmit ? (
             <button
               type="submit"
-              className="btn mt-4 w-full btn-primary text-sm sm:text-base"
+              className="btn mt-4 w-full btn-primary text-xs sm:text-sm"
             >
               Send
             </button>
